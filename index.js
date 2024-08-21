@@ -28,6 +28,46 @@ app.get("/test", (req,res) => {
     res.json(response)
 })
 
+// end point "/profil/nama/umur" dengan method GET
+app.get("/profile/:name/:age", (req,res) => {
+    // :name dan :age -> diberikan titik dua didepan, menunjukkan "name" dan "age"
+    // bersifat dinamis yang dapat diganti nilai nya saat melakukan request
+
+    // menampung data yang dikirimkan
+    let name = req.params.name // mengambil nilai pada parameter name
+    let age = req.params.age // mengambil nilai pada parameter age
+
+    // membuat objek yang berisi data yang akan dijadikan response
+    // response berisi data nama dan umur sesuai dengan nilai parameter
+    let response = {
+        nama: name,
+        umur: age
+    }
+
+    // memberikan response dengan format JSON yang berisi objek diatas
+    res.json(response)
+})
+
+// end point "/bujur_sangkar" dengan method POST
+app.post("/bujur_sangkar", (req,res) => {
+    // menampung data yang dikirimkan dan mengkonversi menjadi tipe numerik
+    let panjang = Number(req.body.panjang) // mengambil nilai panjang dari body
+    let lebar = Number(req.body.lebar) // mengambil nilai lebar dari body
+
+    let luas = panjang * lebar // rumus luas
+    let keliling = 2 * (panjang + lebar) // rumus keliling
+
+    // membuat objek yang berisi data yang akan dijadikan response
+    let response = {
+        panjang: panjang,
+        lebar: lebar,
+        luas: luas,
+        keliling: keliling
+    }
+
+    res.json(response)
+})
+
 // menjalankan server pada port 4000
 app.listen(4000, () => {
     console.log("Server berjalan di port 4000");
