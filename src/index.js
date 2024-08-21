@@ -5,6 +5,8 @@ const app = express()
 const praktikumController = require("./controllers/praktikumController")
 const soal1Controller = require("./controllers/soal1Controller")
 const soal2Controller = require("./controllers/soal2Controller")
+const soal3Controller = require("./controllers/soal3Controller")
+const soal4Controller = require("./controllers/soal4Controller")
 
 // penggunaan body-parser untuk ekstrak data request berformat JSON
 app.use(bodyParser.json())
@@ -19,11 +21,15 @@ app.use(cors())
 const praktikum = require("./routes/praktikumRoute")
 const soal1Route = require("./routes/soal1Route")
 const soal2Route = require("./routes/soal2Route")
+const soal3Route = require("./routes/soal3Route")
+const soal4Route = require("./routes/soal4Route")
 
 // implementasi routes
 app.use("./basic_nodejs", praktikum)
 app.use("./basic_nodejs", soal1Route)
 app.use("./basic_nodejs", soal2Route)
+app.use("./basic_nodejs", soal3Route)
+app.use("./basic_nodejs", soal4Route)
 
 app.get("/test", praktikumController.test)
 app.get("/profil/", praktikumController.profil)
@@ -40,6 +46,12 @@ app.get("/convert/celcius/:celcius", soal2Controller.celcius)
 app.get("/convert/reamur/:reamur", soal2Controller.reamur)
 app.get("/convert/kelvin/:kelvin", soal2Controller.kelvin)
 app.get("/convert/fahrenheit/:fahrenheit", soal2Controller.fahrenheit)
+
+// soal 3
+
+
+// soal 4
+app.post("/bmi", soal4Controller.bmi)
 
 // menjalankan server pada port 4000
 app.listen(4000, () => {
