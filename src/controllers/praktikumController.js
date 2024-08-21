@@ -9,8 +9,8 @@ exports.test = (req,res) => {
 }
 
 exports.profil = (req,res) => {
-    let name = req.params.name
-    let age = req.params.age
+    let name = req.query.name
+    let age = req.query.age
 
     let response = {
         nama: name,

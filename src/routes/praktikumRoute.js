@@ -7,7 +7,7 @@ const praktikumController = require("../controllers/praktikumController")
 
 
 app.get("/test", praktikumController.test)
-app.get("/profil/:name/:age", praktikumController.profil)
+app.get("/profil/", praktikumController.profil)
 app.post("/bujur_sangkar", praktikumController.bujur_sangkar)
 
 module.exports = app
