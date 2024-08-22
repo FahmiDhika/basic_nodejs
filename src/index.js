@@ -49,7 +49,10 @@ app.get("/convert/kelvin/:kelvin", soal2Controller.kelvin)
 app.get("/convert/fahrenheit/:fahrenheit", soal2Controller.fahrenheit)
 
 // soal 3
-
+app.get("/convert/decimal/:angka", soal3Controller.decimal)
+app.get("/convert/octal/:angka", soal3Controller.octal)
+app.get("/convert/hexadecimal/:angka", soal3Controller.hexaDecimal)
+app.get("/convert/binary/:angka", soal3Controller.binary)
 
 // soal 4
 app.post("/bmi", soal4Controller.bmi)
