@@ -2,6 +2,7 @@ const express = require("express") // memanggil library express
 const bodyParser = require("body-parser") // memanggil library body-parser
 const cors = require("cors") // memanggil library cors
 const app = express()
+
 const praktikumController = require("./controllers/praktikumController")
 const soal1Controller = require("./controllers/soal1Controller")
 const soal2Controller = require("./controllers/soal2Controller")
